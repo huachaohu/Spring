@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.huachao</groupId>
+    <artifactId>Springboot-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <modules>
+        <module>../Springboot-solr</module>
+        <module>../Springboot-activemq</module>
+        <module>../Springboot-cas-client1</module>
+        <module>../Springboot-cas-client2</module>
+        <module>../Springboot-cas-security</module>
+        <module>../Springboot-rabbitmq</module>
+        <module>../Springboot-elasticsearch</module>
+        <module>../Springboot-redis</module>
+        <module>../Springboot-mapper</module>
+        <module>../Springboot-servicecomb</module>
+    </modules>
+
+
+
+
+
+
+</project>

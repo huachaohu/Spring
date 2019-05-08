@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: mapper-service
+  datasource:
+    url: jdbc:mysql://centos1.com:3306/mydb01?allowMultiQueries=true
+    username: root
+    password: myway@2018
+logging:
+  level:
+    com.huachao.mapper: debug
+mapper:
+#  mappers:
+#    - com.huachao.mwMapper.MwMapper
+#    - tk.mybatis.mapper.common.Mapper
+  not-empty: true
+#  enum-as-simple-type: true
+mybatis:
+  type-handlers-package: com.huachao.handlers
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler

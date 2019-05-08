@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>一品优购</title>
+</head>
+<body>
+欢迎来到二品优购
+<p id="tips" th:text="${#httpServletRequest.getRemoteUser()}"></p>
+
+
+<a href="http://localhost:9100/cas/logout?service=http://www.baidu.com">退出登录</a>
+</body>
+</html>

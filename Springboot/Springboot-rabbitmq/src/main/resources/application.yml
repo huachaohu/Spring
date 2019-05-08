@@ -1,0 +1,11 @@
+spring:
+  rabbitmq:
+    host: node2.mywaytec.cn
+    port: 5672
+    username: leyou
+    password: leyou
+    virtual-host: /leyou
+  application:
+    name: rabbitmq-sender
+server:
+  port: 8001

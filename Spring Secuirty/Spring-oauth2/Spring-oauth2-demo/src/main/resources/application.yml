@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 10
+#  servlet:
+#    session:
+#      cookie:
+#        name: UISESSIONMEMBER
+#spring:
+#  session:
+#    store-type: none
