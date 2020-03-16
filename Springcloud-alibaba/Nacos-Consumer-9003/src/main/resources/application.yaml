@@ -1,0 +1,17 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.64.102:3333,192.168.64.102:4444,192.168.64.102:5555
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+service-url:
+  nacos-provider: http://nacos-provider
