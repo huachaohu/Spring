@@ -1,13 +1,18 @@
 server:
   port: 8001
+  tomcat:
+    uri-encoding: UTF-8
+
 spring:
+  messages:
+    encoding: UTF-8
   http:
     encoding:
       force: true
       charset: utf-8
       enabled: true
   thymeleaf:
-    prefix=classpath: /templates/
+    prefix: /templates/
     check-template-location: true
     suffix: .html
     encoding: UTF-8

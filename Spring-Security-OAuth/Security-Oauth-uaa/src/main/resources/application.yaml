@@ -1,0 +1,31 @@
+server:
+  port: 10001
+  servlet:
+    context-path: /uaa
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+    servlet:
+      content-type: text/html
+  application:
+    name: UAA-Service
+  datasource:
+    url: jdbc:mysql://192.168.64.102:3306/user_db?useUnicode=true
+    username: root
+    password: huachao
+    driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.64.102:80
+logging:
+  level:
+    root: debug
+    org:
+      springframework:
+        web: info

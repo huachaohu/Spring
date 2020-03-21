@@ -60,4 +60,21 @@ public class LoginController {
         }
         return fullname + " 访问资源1";
     }
+    /**
+     * 测试资源2
+     * @param session
+     * @return
+     */
+    @GetMapping(value = "/r/r2")
+    @ResponseBody
+    public String r2(HttpSession session){
+        String fullname = null;
+        Object userObj = session.getAttribute(UserDto.SESSION_USER_KEY);
+        if(userObj != null){
+            fullname = ((UserDto)userObj).getFullName();
+        }else{
+            fullname = "匿名";
+        }
+        return fullname + " 访问资源2";
+    }
 }
