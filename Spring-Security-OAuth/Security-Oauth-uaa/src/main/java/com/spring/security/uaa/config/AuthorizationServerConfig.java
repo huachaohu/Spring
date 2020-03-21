@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -28,16 +27,12 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private TokenStore tokenStore;
-
     @Autowired
     private ClientDetailsService clientDetailsService;
-
     @Autowired
     private AuthenticationManager authenticationManager;
-
     @Autowired
     private AuthorizationCodeServices authorizationCodeServices;
-
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()//使用in-memory存储
@@ -54,10 +49,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 //false跳转到授权页面
                 .autoApprove(false)
                 .redirectUris("http://www.baidu.com");
-
     }
-
-
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
@@ -70,7 +62,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .allowedTokenEndpointRequestMethods(HttpMethod.POST);
 
     }
-
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security
@@ -80,9 +71,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .checkTokenAccess("permitAll()")
                 .allowFormAuthenticationForClients();
     }
-
     @Bean
     public AuthorizationCodeServices authorizationCodeServices() {
+        //设置授权码模式的授权码如何 存取，暂时采用内存方式
         return new InMemoryAuthorizationCodeServices();
     }
     @Bean
@@ -99,8 +90,4 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         services.setRefreshTokenValiditySeconds(259200);
         return services;
     }
-
-
-
-
 }
