@@ -24,23 +24,23 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public static final String RESOURCE_ID = "res1";
 
+    @Autowired
+    private TokenStore tokenStore;
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.resourceId(RESOURCE_ID)
-//                .tokenStore(tokenStore)
-                .tokenServices(tokenService())
+                .tokenStore(tokenStore)
+//                .tokenServices(tokenService())
                 .stateless(true);
-
     }
-
-    @Bean
-    public ResourceServerTokenServices tokenService() { //使用远程服务请求授权服务器校验token,必须指定校验token 的url、client_id，client_secret
-        RemoteTokenServices service=new RemoteTokenServices();
-        service.setCheckTokenEndpointUrl("http://127.0.0.1:10001/uaa/oauth/check_token");
-        service.setClientId("c1");
-        service.setClientSecret("mysecret");
-        return service;
-    }
+//    @Bean
+//    public ResourceServerTokenServices tokenService() { //使用远程服务请求授权服务器校验token,必须指定校验token 的url、client_id，client_secret
+//        RemoteTokenServices service=new RemoteTokenServices();
+//        service.setCheckTokenEndpointUrl("http://127.0.0.1:10001/uaa/oauth/check_token");
+//        service.setClientId("c1");
+//        service.setClientSecret("mysecret");
+//        return service;
+//    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
