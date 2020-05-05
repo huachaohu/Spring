@@ -14,6 +14,7 @@
         <module>Nacos-Consumer-9003</module>
         <module>Nacos-Config-9004</module>
         <module>Sentinel-Client-9005</module>
+        <module>Nacos-Gateway-9000</module>
     </modules>
 
     <dependencyManagement>

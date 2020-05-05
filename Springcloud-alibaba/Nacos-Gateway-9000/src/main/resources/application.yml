@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: nacos-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: nacos-provider
+          uri: lb://nacos-provider
+          predicates:
+            - Path=/echo/*
+      discovery:
+        locator:
+          enabled: true

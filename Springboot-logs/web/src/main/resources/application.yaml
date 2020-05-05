@@ -1,0 +1,9 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: web
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.58.101:8848

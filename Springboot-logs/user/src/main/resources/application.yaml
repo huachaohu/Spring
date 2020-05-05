@@ -1,0 +1,9 @@
+server:
+  port: 10002
+spring:
+  application:
+    name: user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.58.101:8848

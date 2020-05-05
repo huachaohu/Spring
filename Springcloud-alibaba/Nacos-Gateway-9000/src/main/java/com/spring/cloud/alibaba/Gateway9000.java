@@ -4,16 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-/**
- * @description：
- * @author: huachao
- * @date: 2020/3/11
- */
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableAdminServer
-public class Provider9001 {
+public class Gateway9000 {
     public static void main(String[] args) {
-        SpringApplication.run(Provider9001.class , args);
+        SpringApplication.run(Gateway9000.class , args);
     }
 }
